@@ -65,5 +65,6 @@ C:\Users\Trevor Uehlin\Documents\AndroidSolutions\Lab 3\SavingActivityState\Savi
 C:\Users\Trevor Uehlin\Documents\AndroidSolutions\Lab 3\SavingActivityState\SavingActivityState\obj\Debug\android\assets\System.Runtime.Serialization.pdb
 C:\Users\Trevor Uehlin\Documents\AndroidSolutions\Lab 3\SavingActivityState\SavingActivityState\obj\Debug\android\assets\System.ServiceModel.Internals.pdb
 C:\Users\Trevor Uehlin\Documents\AndroidSolutions\Lab 3\SavingActivityState\SavingActivityState\obj\Debug\android\assets\System.Xml.pdb
+C:\Users\Trevor Uehlin\Documents\AndroidSolutions\Lab 3\SavingActivityState\SavingActivityState\obj\Debug\SavingActivityState.csprojAssemblyReference.cache
 C:\Users\Trevor Uehlin\Documents\AndroidSolutions\Lab 3\SavingActivityState\SavingActivityState\bin\Debug\SavingActivityState.dll
 C:\Users\Trevor Uehlin\Documents\AndroidSolutions\Lab 3\SavingActivityState\SavingActivityState\obj\Debug\linksrc\SavingActivityState.dll.mdb

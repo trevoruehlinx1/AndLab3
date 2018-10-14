@@ -18,17 +18,17 @@ namespace Lab3
 		public List<Quote> Quotes { get { return quotes; } }
 		public Quote CurrentQuote { get; set; }
 
-        /*
-		public Quote GetRandomQuote() 
-		{
-			if (quotes.Count > 0) 
-			{
-				CurrentQuote = quotes [randNumGen.Next (0, quotes.Count)];
-			}
-				
-			return CurrentQuote;
-		}
-        */
+
+        //public Quote GetRandomQuote()
+        //{
+        //    if (quotes.Count > 0)
+        //    {
+        //        CurrentQuote = quotes[randNumGen.Next(0, quotes.Count)];
+        //    }
+
+        //    return CurrentQuote;
+        //}
+
 
         public Quote GetNextQuote()
         {
@@ -41,6 +41,11 @@ namespace Lab3
                     currentQuote = 0;
                 }
             }
+            return CurrentQuote;
+        }
+        public Quote GetSpecificQuote(int quoteIndex)
+        {
+            CurrentQuote = quotes[quoteIndex];
             return CurrentQuote;
         }
 
