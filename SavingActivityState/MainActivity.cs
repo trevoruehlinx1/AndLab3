@@ -11,39 +11,39 @@ namespace SavingActivityState
     {
         int score;
         int quoteIndex;
-
+        string quoteText;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            //Get the current score and put it in the var!
-            if (savedInstanceState != null)
-                score = savedInstanceState.GetInt("score");
-            else score = 0;
-
-            //Get the current quote index and put it in the variable
-            if (savedInstanceState != null)
-                quoteIndex = savedInstanceState.GetInt("quoteIndex");
-            else quoteIndex = 0;
-
-            // Create the quote collection and display the current quote
-            //Im Trying to keep the current quote when activity is destroyed
             var quoteCollection = new QuoteBank();
             quoteCollection.LoadQuotes();
-            if (quoteIndex > -1)
-                quoteCollection.GetSpecificQuote(quoteIndex);
-            else 
-                quoteCollection.GetNextQuote();
-
 
             //Create variables for all of the TextViews
             var quotationTextView = FindViewById<TextView>(Resource.Id.quoteTextView);
-            quotationTextView.Text = quoteCollection.CurrentQuote.Quotation;
             var enteredNameLabel = FindViewById<TextView>(Resource.Id.answerInputLabel);
             var resultLabel = FindViewById<TextView>(Resource.Id.wrongRightLabel);
             var scoreBoard = FindViewById<TextView>(Resource.Id.scoreBoardLabel);
+
+            //Get the current quote index and put it in the variable
+            if (savedInstanceState != null)
+            {
+                quoteIndex = savedInstanceState.GetInt("quoteIndex");
+                quoteText = quoteCollection.Quotes[quoteIndex].Quotation;
+                score = savedInstanceState.GetInt("score");
+            }
+            else
+            {
+                quoteText = quoteCollection.GetNextQuote().Quotation;
+                score = 0;
+            }
+
+            // Create the quote collection and display the current quote Im Trying to 
+            //prevent the app from going the next quote when the activity is destroyed
+
+            quotationTextView.Text = quoteText;
             scoreBoard.Text = score.ToString();
 
 
@@ -55,7 +55,7 @@ namespace SavingActivityState
                 quotationTextView.Text = quoteCollection.CurrentQuote.Quotation;
                 resultLabel.Text = "";
                 enteredNameLabel.Text = "";
-                quoteIndex++;
+                quoteIndex = quoteCollection.Quotes.IndexOf(quoteCollection.CurrentQuote);
             };
 
             var enterButton = FindViewById<Button>(Resource.Id.enterButton);
@@ -83,4 +83,3 @@ namespace SavingActivityState
         }
     }
 }
-

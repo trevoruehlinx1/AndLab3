@@ -43,18 +43,13 @@ namespace Lab3
             }
             return CurrentQuote;
         }
-        public Quote GetSpecificQuote(int quoteIndex)
-        {
-            CurrentQuote = quotes[quoteIndex];
-            return CurrentQuote;
-        }
 
         public void LoadQuotes()
 		{
-			quotes.Add(new Quote { Quotation = "If men were angels, no government would be necessary.", Person = "James Madison"});
-			quotes.Add(new Quote { Quotation = "You can't trust water, even a straight stick turns crooked in it.", Person = "W. C. Fields"});
-			quotes.Add(new Quote { Quotation = "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", Person = "Helen Keller"});
-			quotes.Add(new Quote { Quotation = "If you get, give. If you learn, teach.", Person = "Maya Angelou"});
+			quotes.Add(new Quote { Quotation = "#0 If men were angels, no government would be necessary.", Person = "James Madison"});
+			quotes.Add(new Quote { Quotation = "#1 You can't trust water, even a straight stick turns crooked in it.", Person = "W. C. Fields"});
+			quotes.Add(new Quote { Quotation = "#2 The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", Person = "Helen Keller"});
+			quotes.Add(new Quote { Quotation = "#3 If you get, give. If you learn, teach.", Person = "Maya Angelou"});
 			CurrentQuote = quotes [0];
 		}
 
